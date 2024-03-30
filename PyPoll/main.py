@@ -15,16 +15,21 @@
 ### start here, import election data
 
 import csv
-file_path = "PyPoll/Resources/election_data.csv"
 
-row_count = 0
+# variables
+file_path = "PyPoll/Resources/election_data.csv"
+vote_count = 0
 candidates = []
 
-with open(file_path, 'r') as text:
-    csv_file = csv.reader(text)
-
+# open election file
+with open(file_path) as election_data:
+    csv_file = csv.reader(election_data)
+    next(csv_file)
     for row in csv_file:
-        row_count = row_count + 1
-        #print(row_count)
-        total_votes = int(row_count[-1])
-        print(total_votes)
+        vote_count += 1
+
+#print the results
+print("Election Results")
+print('----------------------------')
+print(f'Total Votes: {vote_count}')
+print('----------------------------')

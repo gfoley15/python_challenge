@@ -19,6 +19,3 @@ file_path = "PyPoll/Resources/budget_data.csv"
 
 with open(file_path, 'r') as text:
     csv_file = csv.reader(text)
-
-    for row in csv_file:
-       

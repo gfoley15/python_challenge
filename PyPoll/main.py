@@ -40,14 +40,19 @@ with open(file_path) as election_data:
             candidate_id = candidates.index(candidate) # establish index for candidate
             candidate_votes[candidate_id] += 1 # add the next votes
 # done reading the file
+# print(max(candidate_votes))
+# print(candidates[candidate_votes.index(max(candidate_votes))])
+
 # find the winner
-winner = ""
-winner_vote_count = 0
-for candidate in candidates:
-    current_winning_votes = candidate_votes[candidates.index(candidate)]
-    if current_winning_votes > winner_vote_count:
-            winner = candidate
-            winner_vote_count = current_winning_votes
+winner = candidates[candidate_votes.index(max(candidate_votes))]
+
+# winner = ""
+# winner_vote_count = 0
+# for candidate in candidates:
+#    current_winning_votes = candidate_votes[candidates.index(candidate)]
+#    if current_winning_votes > winner_vote_count:
+#            winner = candidate
+#            winner_vote_count = current_winning_votes
 
 # print the results to the screen
 print("Election Results")
@@ -65,7 +70,6 @@ print('----------------------------')
 # export text file with results
 out_file_path = "PyPoll\Analysis\election_results.txt"
 with open(out_file_path, 'w') as file_out:
-    file_out.write()
     file_out.write("Election Results\n")
     file_out.write('----------------------------\n')
     file_out.write(f'Total Votes: {vote_count}\n')

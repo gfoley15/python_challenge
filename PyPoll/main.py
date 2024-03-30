@@ -61,3 +61,19 @@ for candidate in candidates:
 print('----------------------------')
 print(f'Winner: {winner}')
 print('----------------------------')
+
+# export text file with results
+out_file_path = "PyPoll\Analysis\election_results.txt"
+with open(out_file_path, 'w') as file_out:
+    file_out.write()
+    file_out.write("Election Results\n")
+    file_out.write('----------------------------\n')
+    file_out.write(f'Total Votes: {vote_count}\n')
+    file_out.write('----------------------------\n')
+    for candidate in candidates:
+        current_candidate_votes = candidate_votes[candidates.index(candidate)] # varible inside for loop for unique candidate vote count
+        vote_percentage = round((current_candidate_votes / vote_count)*100, 3) # variable inside for loop for calculating percent of vote for each candiate
+        file_out.write(f'{candidate}: {vote_percentage}% ({current_candidate_votes})\n')
+    file_out.write('----------------------------\n')
+    file_out.write(f'Winner: {winner}\n')
+    file_out.write('----------------------------\n')

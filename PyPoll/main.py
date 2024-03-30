@@ -11,3 +11,20 @@
 #Diana DeGette: 73.812% (272892)
 #Raymon Anthony Doane: 3.139% (11606)
 #Winner: Diana DeGette
+
+### start here, import election data
+
+import csv
+file_path = "PyPoll/Resources/election_data.csv"
+
+row_count = 0
+candidates = []
+
+with open(file_path, 'r') as text:
+    csv_file = csv.reader(text)
+
+    for row in csv_file:
+        row_count = row_count + 1
+        #print(row_count)
+        total_votes = int(row_count[-1])
+        print(total_votes)

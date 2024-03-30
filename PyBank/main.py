@@ -11,3 +11,14 @@
 #Average Change: $-8311.11
 #Greatest Increase in Profits: Aug-16 ($1862002)
 #Greatest Decrease in Profits: Feb-14 ($-1825558)
+
+# import election data
+
+import csv
+file_path = "PyPoll/Resources/budget_data.csv"
+
+with open(file_path, 'r') as text:
+    csv_file = csv.reader(text)
+
+    for row in csv_file:
+       

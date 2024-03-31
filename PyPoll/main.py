@@ -22,7 +22,7 @@ vote_count = 0
 candidates = []
 candidate_votes = []
 # open election file
-with open(file_path) as election_data:
+with open(file_path, 'r') as election_data:
     csv_file = csv.reader(election_data)
     next(csv_file) # skips a row in the file, the header row
     # read a row in the file
@@ -40,19 +40,18 @@ with open(file_path) as election_data:
             candidate_id = candidates.index(candidate) # establish index for candidate
             candidate_votes[candidate_id] += 1 # add the next votes
 # done reading the file
-# print(max(candidate_votes))
-# print(candidates[candidate_votes.index(max(candidate_votes))])
-
 # find the winner
 winner = candidates[candidate_votes.index(max(candidate_votes))]
 
-# winner = ""
-# winner_vote_count = 0
-# for candidate in candidates:
-#    current_winning_votes = candidate_votes[candidates.index(candidate)]
-#    if current_winning_votes > winner_vote_count:
-#            winner = candidate
-#            winner_vote_count = current_winning_votes
+    # brute force version for finding winner
+    # print(max(candidate_votes))
+    # print(candidates[candidate_votes.index(max(candidate_votes))])# winner = ""
+    # winner_vote_count = 0
+    # for candidate in candidates:
+    #    current_winning_votes = candidate_votes[candidates.index(candidate)]
+    #    if current_winning_votes > winner_vote_count:
+    #            winner = candidate
+    #            winner_vote_count = current_winning_votes
 
 # print the results to the screen
 print("Election Results")

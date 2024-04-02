@@ -24,8 +24,6 @@ dates = [] # list of hold dates for each row
 profit_loss_amounts = [] # list to hold profit loss amount for each row
 profit_loss_change = {} # dictionary to hold new variable, change
 
-
-
 #open budget file
 with open(file_path, 'r') as budget_data:
     csv_file = csv.reader(budget_data)
@@ -82,3 +80,12 @@ print(f'Greatest Increase in Profits: {max_date} (${greatest_increase})')
 print(f'Greatest Decrease in Profits: {min_date} (${greatest_decrease})')
 
 # export text file with results
+out_file_path = "PyBank/Analysis/financial_analysis.txt"
+with open(out_file_path, 'w') as file_out:
+    file_out.write("Financial Analysis\n")
+    file_out.write('----------------------------\n')
+    file_out.write(f'Number of Months: {month_count}\n')
+    file_out.write(f'Total: ${sum_profit}\n')
+    file_out.write(f'Average Change: ${average_change}\n')
+    file_out.write(f'Greatest Increase in Profits: {max_date} (${greatest_increase})\n')
+    file_out.write(f'Greatest Decrease in Profits: {min_date} (${greatest_decrease})\n')

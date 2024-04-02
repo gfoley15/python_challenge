@@ -1,5 +1,8 @@
 # python_challenge
-### The following repo includes two working examples to read a CSV file into Python, extract key data points from the source, and print/export out the data extractions for analysis.
+### The following repo includes two working examples to read a CSV file into Python, extract key data points from the source, and print/export out the data extractions for analysis. Python documentation for dictionary was used as a source of information to assist with data collection and extraction code. Here is the links referenced: 
+  - https://docs.python.org/3/library/stdtypes.html#dict.items
+  - https://docs.python.org/3/library/stdtypes.html#dict.values
+  - https://docs.python.org/3/library/stdtypes.html#range
 
 ## PyBank
   - Reading CSV file budget_data into Python

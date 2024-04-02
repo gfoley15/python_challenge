@@ -21,6 +21,7 @@ file_path = "PyPoll/Resources/election_data.csv"
 vote_count = 0
 candidates = []
 candidate_votes = []
+
 # open election file
 with open(file_path, 'r') as election_data:
     csv_file = csv.reader(election_data)
@@ -36,14 +37,15 @@ with open(file_path, 'r') as election_data:
         if candidate not in candidates:
             candidates.append(candidate) # add candidate to the list if they are not in the list
             candidate_votes.append(1) # add the first vote
-        else: #candidate is in the list
+        else: # candidate is in the list
             candidate_id = candidates.index(candidate) # establish index for candidate
             candidate_votes[candidate_id] += 1 # add the next votes
 # done reading the file
+
 # find the winner
 winner = candidates[candidate_votes.index(max(candidate_votes))]
 
-    # brute force version for finding winner
+    # brute force version for finding winner, can be ignored and maintaining as reference
     # print(max(candidate_votes))
     # print(candidates[candidate_votes.index(max(candidate_votes))])# winner = ""
     # winner_vote_count = 0

@@ -16,7 +16,7 @@
 
 import csv
 
-#variables
+# variables
 file_path = "PyBank/Resources/budget_data.csv"
 month_count = 0
 sum_profit = 0
@@ -24,7 +24,7 @@ dates = [] # list of hold dates for each row
 profit_loss_amounts = [] # list to hold profit loss amount for each row
 profit_loss_change = {} # dictionary to hold new variable, change
 
-#open budget file
+# open budget file
 with open(file_path, 'r') as budget_data:
     csv_file = csv.reader(budget_data)
     next(csv_file) # skips header row
